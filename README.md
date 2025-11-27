@@ -109,8 +109,9 @@ A user-friendly interface was built with Streamlit.
 
 
 **Example Grad-CAM output:**
-<img width="1390" height="472" alt="image" src="https://github.com/user-attachments/assets/3fb46d15-692f-4a8c-80b9-28973439f3f9" />
-0<img width="1520" height="503" alt="image" src="https://github.com/user-attachments/assets/9d8607e0-7da6-47c5-8a11-d6480ae443ce" />
+<img width="1372" height="475" alt="image" src="https://github.com/user-attachments/assets/5784b5ce-67ae-4cdf-91f8-830869f77150" />
+
+<img width="1520" height="503" alt="image" src="https://github.com/user-attachments/assets/9d8607e0-7da6-47c5-8a11-d6480ae443ce" />
 
 
 ---
