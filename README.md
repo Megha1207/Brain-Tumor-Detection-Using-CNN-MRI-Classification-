@@ -1,3 +1,4 @@
+<img width="1308" height="481" alt="image" src="https://github.com/user-attachments/assets/849caab3-d08f-4c10-a07e-352d94534e2d" />
 
 # Brain Tumor Detection Using CNN on MRI Images
 
@@ -103,9 +104,15 @@ A user-friendly interface was built with Streamlit.
 * Confusion matrix
 * Classification report
 * Grad-CAM visualizations highlighting tumor regions
+<img width="1308" height="481" alt="image" src="https://github.com/user-attachments/assets/9ad6e2ca-1633-457b-9605-acb442ba0cbd" />
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0bda0428-3665-4dec-a16e-8b98a6d9ea57" />
+
+
 
 **Example Grad-CAM output:**
-![Grad-CAM](images/gradcam_example.png)
+<img width="1390" height="472" alt="image" src="https://github.com/user-attachments/assets/3fb46d15-692f-4a8c-80b9-28973439f3f9" />
+0<img width="1520" height="503" alt="image" src="https://github.com/user-attachments/assets/9d8607e0-7da6-47c5-8a11-d6480ae443ce" />
+
 
 ---
 
