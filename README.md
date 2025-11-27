@@ -48,6 +48,8 @@ The model was built using TensorFlow/Keras with:
 * MaxPooling for spatial downsampling
 * Dropout to avoid overfitting
 * Fully connected layers ending in a sigmoid neuron
+<img width="592" height="766" alt="Screenshot 2025-11-27 224629" src="https://github.com/user-attachments/assets/7d89a069-3220-4efc-8968-0aad75674d4d" />
+
 
 **Training configuration:**
 
