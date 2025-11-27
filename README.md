@@ -1,55 +1,129 @@
-# Brain Tumor Detection Using CNN (MRI Classification)
-# 1. Problem Statement
 
-Brain tumors require early and accurate diagnosis to improve patient outcomes. MRI scans are one of the most reliable imaging techniques, but manual interpretation is time-consuming and subject to human error.
-This project aims to build an automated system that classifies MRI images as either Tumor or No Tumor using a Convolutional Neural Network (CNN).
-The system also includes:
+# Brain Tumor Detection Using CNN on MRI Images
 
-A trained deep learning model
+## **1. Project Overview**
 
-A FastAPI backend for real-time inference
+This repository contains an end-to-end deep learning system for detecting brain tumors from MRI images. A custom Convolutional Neural Network (CNN) is trained to classify MRI scans into **tumor** and **no_tumor** categories. The project includes dataset preparation, model design, training, evaluation, explainability with Grad-CAM, and deployment using **FastAPI** and **Streamlit**.
 
-A Streamlit interface for user-friendly interaction
+---
 
-# 2. Methodology
-Data Collection
+## **2. Problem Statement**
 
-Dataset used: Brain MRI Images for Tumor Detection
+Early detection of brain tumors significantly improves treatment success. However, MRI analysis is time-consuming and requires expert interpretation. This project aims to build a reliable automated classifier that assists in identifying tumors in MRI scans using deep learning, thereby reducing workload and improving consistency in diagnosis.
 
-Contains MRI scans labelled as tumor and no tumor
+---
 
-Data Pre-processing
+## **3. Dataset**
 
-Image resizing (e.g., 150x150 or 224x224)
+**Source:** Brain MRI Images for Brain Tumor Detection (Kaggle)
 
-Normalization (pixel values scaled to [0,1])
+**Classes:**
 
-Train/Validation/Test split
+* tumor
+* no_tumor
 
-Data augmentation:
+**Preprocessing:**
 
-Rotation
+* Resize to 150×150
+* Normalize pixel values (0–1)
+* Data augmentation (rotation, horizontal flip, zoom, shear)
+* 80% training and 20% validation split
 
-Horizontal/vertical flips
+---
 
-Zoom
+## **4. Methodology**
 
-Brightness adjustments
+### **4.1 Data Processing**
 
-Model Training
+* Checked labels and cleaned inconsistent class folders
+* Applied augmentations to prevent overfitting
+* Created training and validation generators
 
-CNN architecture built using TensorFlow/Keras
+### **4.2 Model Training**
 
-EarlyStopping to prevent overfitting
+The model was built using TensorFlow/Keras with:
 
-ReduceLROnPlateau for adaptive learning rates
+* Conv2D layers with ReLU and L2 regularization
+* BatchNormalization for stable convergence
+* MaxPooling for spatial downsampling
+* Dropout to avoid overfitting
+* Fully connected layers ending in a sigmoid neuron
 
-ModelCheckpoint to save the best model (best_balanced_model.keras)
+**Training configuration:**
 
-Evaluation
+* Optimizer: Adam (learning rate: 0.0007)
+* Loss: Binary cross-entropy
+* Metrics: Accuracy, Precision, Recall, AUC
+* Callbacks: EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
 
-Accuracy, Precision, Recall and F1 Score
+---
 
-Confusion Matrix
+## **5. Model Architecture**
 
-Grad-CAM heatmaps for interpretability
+```
+Conv2D → BatchNorm → MaxPool  
+Conv2D → BatchNorm → MaxPool  
+Conv2D → BatchNorm → MaxPool  
+Flatten  
+Dense → Dropout  
+Dense → Sigmoid
+```
+
+---
+
+## **6. Streamlit Interface**
+
+A user-friendly interface was built with Streamlit.
+
+**Features:**
+
+* Upload MRI image
+* See model prediction (tumor or no_tumor)
+* View Grad-CAM heatmap
+* Confidence score display
+
+**Screenshot :**
+
+<img width="1536" height="1024" alt="c1160b3d-c11d-4b52-b70e-e79a258f74bc" src="https://github.com/user-attachments/assets/3353f4dd-20b6-44e6-9657-e7ad0f486d1a" />
+
+
+
+
+---
+
+## **7. Results**
+
+**Final Accuracy Achieved:** 82%
+
+**Evaluation Outputs:**
+
+* Validation accuracy and loss curves
+* Confusion matrix
+* Classification report
+* Grad-CAM visualizations highlighting tumor regions
+
+**Example Grad-CAM output:**
+![Grad-CAM](images/gradcam_example.png)
+
+---
+
+## **8. Deployment**
+
+* **FastAPI** used for serving the model through a `/predict` endpoint.
+* **Streamlit** front-end interacts with FastAPI for live inference.
+* Allows real-time classification of MRI scans uploaded by users.
+
+---
+
+
+
+## **9. Future Work**
+
+* Hyperparameter tuning
+* Transfer learning integration
+* Multi-class tumor subtype classification
+* Improved Grad-CAM overlays
+* Dockerized deployment
+
+---
+
