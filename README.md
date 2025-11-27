@@ -1,4 +1,3 @@
-<img width="1308" height="481" alt="image" src="https://github.com/user-attachments/assets/849caab3-d08f-4c10-a07e-352d94534e2d" />
 
 # Brain Tumor Detection Using CNN on MRI Images
 
